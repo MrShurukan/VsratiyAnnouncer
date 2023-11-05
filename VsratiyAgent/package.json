@@ -1,0 +1,15 @@
+{
+  "name": "vsratiyagent",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ilya Zavyalov",
+  "license": "ISC",
+  "dependencies": {
+    "dota2-gsi": "^1.0.2",
+    "express": "^4.18.2"
+  }
+}
