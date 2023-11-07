@@ -1,13 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DiscordBot\DiscordBot.csproj" />
+      <ProjectReference Include="..\DiscordBotProject\DiscordBotProject.csproj" />
     </ItemGroup>
+
+
+    <ItemGroup>
+      <PackageReference Include="Blazored.Toast" Version="4.1.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.13" />
+    </ItemGroup>
+
+
 
 </Project>

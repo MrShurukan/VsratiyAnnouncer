@@ -1,13 +1,16 @@
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using WebInterface.Data;
+using Blazored.Toast;
+using DiscordBotProject;
+using Overlord.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddBlazoredToast();
+builder.Services.AddScoped<ActionManager>();
+
+builder.Services.AddSingleton(new DiscordBot());
 
 var app = builder.Build();
 
@@ -27,5 +30,9 @@ app.UseRouting();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
+
+#pragma warning disable CS4014
+app.Services.GetService<DiscordBot>()!.StartAsync();
+#pragma warning restore CS4014
 
 app.Run();
