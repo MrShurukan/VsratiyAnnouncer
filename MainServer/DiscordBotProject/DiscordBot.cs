@@ -1,4 +1,5 @@
 ﻿using Discord;
+using Discord.Commands;
 using Discord.Net;
 using Discord.WebSocket;
 using Newtonsoft.Json;
@@ -61,11 +62,35 @@ public class DiscordBot
     }
     private async Task StartCommandHandler(SocketSlashCommand command)
     {
-        throw new NotImplementedException();
+        var user = command.User as SocketGuildUser;
+        if (user!.VoiceState == null)
+        {
+            await command.RespondAsync("Дядя, в канал-то зайди голосовой ежжи", ephemeral: true);
+            return;
+        }
+
+        await command.RespondAsync("Стартуем, пацаны!");
+        Task.T
+        await user.VoiceState.Value.VoiceChannel.ConnectAsync();
     }
     private async Task StopCommandHandler(SocketSlashCommand command)
     {
-        throw new NotImplementedException();
+        var guild = _client.GetGuild((ulong)command.GuildId!);
+        var audioClient = guild.AudioClient;
+    
+        if (audioClient != null)
+        {
+            // Stop the audio client if needed (e.g., if it's playing or streaming something)
+            // ...
+
+            // Disconnect the audio client
+            await audioClient.StopAsync();
+            await command.RespondAsync("А на сегодня всё...");
+        }
+        else
+        {
+            await command.RespondAsync("Дядя, у тебя шиза, я даже к каналу не подключен никакому", ephemeral: true);
+        }
     }
 
     private async Task PingCommandHandler(SocketSlashCommand command)
@@ -91,6 +116,12 @@ public class DiscordBot
             new SlashCommandBuilder()
                 .WithName("test-remember-channel")
                 .WithDescription("[Админ] Данная команда нужна для проверки связки между Overlord и DiscordBot"),
+            new SlashCommandBuilder()
+                .WithName("start")
+                .WithDescription("Да начнётся треш в голосовом канале"),
+            new SlashCommandBuilder()
+                .WithName("stop")
+                .WithDescription("Хватит на сегодня интернета")
         };
 
         try
