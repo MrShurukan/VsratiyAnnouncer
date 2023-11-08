@@ -1,9 +1,7 @@
 ﻿@page "/admin"
 @using DiscordBotProject
-@using Blazored.Toast.Configuration
 @using Overlord.Domain
 @inject DiscordBot Bot
-@inject IToastService ToastService
 @inject ActionManager ActionManager
 
 <PageTitle>Admin Zone</PageTitle>
@@ -22,7 +20,7 @@
 
 <hr/>
 
-<h3>Создать слеш комманды на сервере</h3>
+<h3>Создать слеш команды на сервере</h3>
 <span>GuildId:</span>
 <InputText @bind-Value="_guildId"></InputText>
 <button class="btn btn-primary" disabled="@_isDisabled" @onclick="UploadSlashCommands">Создать</button>
@@ -37,7 +35,7 @@
         await ActionManager.Toastify(async () =>
         {
             var guildIdNumber = ulong.Parse(_guildId);
-            await Bot.CreateSlashCommands(guildIdNumber);
+            await Bot.CreateSlashCommandsAsync(guildIdNumber);
         }, "Команды созданы!");
 
         _isDisabled = false;
@@ -45,7 +43,7 @@
 }
 
 <h3 class="mt-5">[Тест] Отправить сообщение на запомненный канал (/test-remember-channel)</h3>
-<p>Текущий запомненный канал: @(DiscordBot.TestChannelId == null ? "пока никакой" : DiscordBot.TestChannelId)</p>
+<p>Текущий запомненный канал: @(MainInteractionModule.TestChannelId == null ? "пока никакой" : MainInteractionModule.TestChannelId)</p>
 <span>Кастомное сообщение:</span>
 <InputText @bind-Value="_customMessage"></InputText>
 <button class="btn btn-primary" disabled="@_isDisabled" @onclick="SendCustomMessage">Создать</button>
@@ -58,7 +56,7 @@
 
         await ActionManager.Toastify(async () =>
         {
-            await Bot.SendTestMessageToMemorizedChannel(_customMessage);
+            await Bot.SendTestMessageToMemorizedChannelAsync(_customMessage);
         }, $"Отправил сообщение '{_customMessage}'");
 
         _isDisabled = false;
