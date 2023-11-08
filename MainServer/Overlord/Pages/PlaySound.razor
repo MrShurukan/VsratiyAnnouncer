@@ -1,0 +1,60 @@
+﻿@page "/playsound"
+@using DiscordBotProject
+@using Overlord.Domain
+@inject DiscordBot Bot
+@inject ActionManager ActionManager
+<PageTitle>Воспроизвести звук</PageTitle>
+
+<h3>Воспроизвести звук</h3>
+<InputSelect class="form-select" @bind-Value="_selectedFile">
+    <option value="none" disabled selected>Выберите файл</option>
+    @foreach (var file in _fileNames)
+    {
+        <option value="@file">@file</option>
+    }
+</InputSelect>
+<br/>
+<button disabled="@_isDisabled" class="mt-4 btn btn-primary" @onclick="PlaySoundButton">Проиграть</button>
+
+@if (MainInteractionModule.AudioClient is not null)
+{
+    <div class="mt-5 alert alert-success d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#check-circle-fill"/></svg>
+        <div>
+            Бот подключён к голосовому каналу
+        </div>
+    </div>
+}
+else
+{
+    <div class="mt-5 alert alert-danger d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+        <div>
+            Бот не подключён к каналу (обновите страницу для проверки)
+        </div>
+    </div>
+}
+@code {
+    private bool _isDisabled = false;
+    const string SoundsDirectory = "./Sounds";
+    private string[] _fileNames = Directory.EnumerateFiles(SoundsDirectory)
+        .Select(x => x.Replace("\\", "/").Split("/").Last())
+        .ToArray();
+
+    private string _selectedFile = "none";
+    private async Task PlaySoundButton()
+    {
+        _isDisabled = true;
+        
+        await ActionManager.Toastify(async () =>
+        {
+            if (_selectedFile == "none")
+                throw new Exception("Выберите файл!");
+
+            await MainInteractionModule.PlayAudioAsync(SoundsDirectory + $"/{_selectedFile}");
+
+        }, "Звук проигран!");
+
+        _isDisabled = false;
+    }
+}

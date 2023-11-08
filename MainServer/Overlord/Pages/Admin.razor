@@ -1,0 +1,64 @@
+﻿@page "/admin"
+@using DiscordBotProject
+@using Overlord.Domain
+@inject DiscordBot Bot
+@inject ActionManager ActionManager
+
+<PageTitle>Admin Zone</PageTitle>
+
+<h1>Админская зона</h1>
+
+<div class="text-center mb-4">
+<img src="img/statham.png"/>
+</div>
+
+<blockquote class="blockquote">
+    <p class="mb-4">Суки, когда-то, когда мне будет не лень, я закрою эту админ панель от посторонних. Но пока этого 
+        не случилось бля я вам запрещаю трогать тут кнопки</p>
+    <footer class="blockquote-footer">Джейсон Стэтхэм, <cite title="Source Title">ГейБар 2023</cite></footer>
+</blockquote>
+
+<hr/>
+
+<h3>Создать слеш команды на сервере</h3>
+<span>GuildId:</span>
+<InputText @bind-Value="_guildId"></InputText>
+<button class="btn btn-primary" disabled="@_isDisabled" @onclick="UploadSlashCommands">Создать</button>
+
+@code {
+    private string _guildId = "326813774507933697";
+    private bool _isDisabled = false;
+    private async Task UploadSlashCommands()
+    {
+        _isDisabled = true;
+
+        await ActionManager.Toastify(async () =>
+        {
+            var guildIdNumber = ulong.Parse(_guildId);
+            await Bot.CreateSlashCommandsAsync(guildIdNumber);
+        }, "Команды созданы!");
+
+        _isDisabled = false;
+    }
+}
+
+<h3 class="mt-5">[Тест] Отправить сообщение на запомненный канал (/test-remember-channel)</h3>
+<p>Текущий запомненный канал: @(MainInteractionModule.TestChannelId == null ? "пока никакой" : MainInteractionModule.TestChannelId)</p>
+<span>Кастомное сообщение:</span>
+<InputText @bind-Value="_customMessage"></InputText>
+<button class="btn btn-primary" disabled="@_isDisabled" @onclick="SendCustomMessage">Создать</button>
+
+@code {
+    private string _customMessage = "Hello everynyan";
+    private async Task SendCustomMessage()
+    {
+        _isDisabled = true;
+
+        await ActionManager.Toastify(async () =>
+        {
+            await Bot.SendTestMessageToMemorizedChannelAsync(_customMessage);
+        }, $"Отправил сообщение '{_customMessage}'");
+
+        _isDisabled = false;
+    }
+}
