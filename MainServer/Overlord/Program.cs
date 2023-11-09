@@ -31,8 +31,15 @@ app.UseRouting();
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
-#pragma warning disable CS4014
-app.Services.GetService<DiscordBot>()!.StartAsync();
-#pragma warning restore CS4014
+if (app.Configuration.GetValue<bool>("LaunchDiscordBot", true))
+{
+    #pragma warning disable CS4014
+    app.Services.GetService<DiscordBot>()!.StartAsync();
+    #pragma warning restore CS4014
+}
+else
+{
+    Console.WriteLine("Внимание! Дискорд бот не будет запущен, так как стоит LaunchDiscordBot = false в appsettings.json");    
+}
 
 app.Run();

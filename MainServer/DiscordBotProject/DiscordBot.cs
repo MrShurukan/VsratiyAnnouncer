@@ -15,12 +15,18 @@ public class DiscordBot
 {
     private readonly DiscordSocketClient _client = new();
     private InteractionService _interactionService = default!;
-
+    private Settings _settings;
+    
     private readonly IServiceProvider _serviceProvider = new ServiceCollection().BuildServiceProvider();
     private Task Log(LogMessage msg)
     {
         Console.WriteLine(msg.ToString());
         return Task.CompletedTask;
+    }
+    
+    public void UpdateSettings(Settings discordSettings)
+    {
+        _settings = discordSettings;
     }
 
     public async Task StartAsync()
@@ -46,12 +52,8 @@ public class DiscordBot
             await _interactionService.ExecuteCommandAsync(ctx, _serviceProvider);
         };
 
-        const string settingsPath = $"../{nameof(DiscordBotProject)}/discordbot.json";
-        if (!File.Exists(settingsPath))
-        {
-            throw new FileNotFoundException($"Нет файла discordbot.json в корне проекта {nameof(DiscordBotProject)} (см. discordbot.sample.json)");
-        }
-        var discordToken = JsonConvert.DeserializeObject<Settings>(await File.ReadAllTextAsync(settingsPath)).Token;
+        _settings = await Settings.GetFromFileAsync();
+        var discordToken = _settings.Token;
 
         Console.WriteLine("Запускаю бота...");
         await _client.LoginAsync(TokenType.Bot, discordToken);

@@ -1,0 +1,45 @@
+﻿@page "/settings"
+@using DiscordBotProject
+@using Microsoft.AspNetCore.Identity
+@using Overlord.Domain
+@using Overlord.Components
+@inject DiscordBot Bot
+@inject ActionManager ActionManager
+
+<PageTitle>Общие настройки</PageTitle>
+<h3>Общие настройки</h3>
+
+<EditForm class="mt-5" Model="_discordSettings">
+    <div class="mb-3">
+        <label for="input1" class="form-label">Отключаться от ГС после того, как все люди вышли из канала?</label>
+        <InputSelectBoolean id="input1" class="form-control" @bind-Value="_discordSettings.LeftAloneAutoDisconnectFromVoice" />
+        @* <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> *@
+    </div>
+    @if (_discordSettings.LeftAloneAutoDisconnectFromVoice)
+    {
+        <div class="ms-4 mb-5">
+            <label for="input2" class="form-label">Таймаут после которого нужно отключаться (в минутах)</label>
+            <InputNumber class="form-control" id="input2" @bind-Value="_discordSettings.LeftAloneAutoDisconnectMinutes" />
+        </div>
+    }
+    
+    <button disabled="@_isDisabled" type="submit" class="btn btn-success" @onclick="Callback">Сохранить</button>
+</EditForm>
+
+@code {
+    private bool _isDisabled = false;
+    private readonly DiscordBotProject.Settings _discordSettings = DiscordBotProject.Settings.GetFromFile();
+    private async Task Callback()
+    {
+        _isDisabled = true;
+
+        await ActionManager.Toastify(() =>
+        {
+            _discordSettings.WriteToFile();
+            Bot.UpdateSettings(_discordSettings);
+            return Task.CompletedTask;
+        }, "Успешно сохранено");
+
+        _isDisabled = false;
+    }
+}
