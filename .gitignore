@@ -6,3 +6,5 @@ MainServer/Overlord/libsodium.dll
 MainServer/Overlord/opus.dll
 
 MainServer/Overlord/Sounds/
+
+VsratiyAgent/node_modules/
