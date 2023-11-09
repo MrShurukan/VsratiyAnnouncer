@@ -1,6 +1,7 @@
 using Blazored.Toast;
 using DiscordBotProject;
 using Overlord.Domain;
+using Overlord.Misc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,5 +42,8 @@ else
 {
     Console.WriteLine("Внимание! Дискорд бот не будет запущен, так как стоит LaunchDiscordBot = false в appsettings.json");    
 }
+
+Console.WriteLine("Проверяю зависимости...");
+DependencyHelper.TestDependencies();
 
 app.Run();
