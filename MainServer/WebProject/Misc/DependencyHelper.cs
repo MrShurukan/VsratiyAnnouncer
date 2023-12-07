@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace Overlord.Misc;
+namespace WebProject.Misc;
 
 public static class DependencyHelper
 {

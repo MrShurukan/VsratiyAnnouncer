@@ -19,7 +19,7 @@ public class MainInteractionModule : InteractionModuleBase
         await RespondAsync(input);
     }
 
-    [SlashCommand("test-remember-channel", "[Админ] Данная команда нужна для проверки связки между Overlord и DiscordBot")]
+    [SlashCommand("test-remember-channel", "[Админ] Данная команда нужна для проверки связки между WebProject и DiscordBot")]
     public async Task TestRememberChannel(ITextChannel channel)
     {
         TestChannelId = channel.Id;

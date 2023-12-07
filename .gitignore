@@ -1,10 +1,10 @@
 
-MainServer/Overlord/ffmpeg.exe
+MainServer/WebProject/ffmpeg.exe
 
-MainServer/Overlord/libsodium.dll
+MainServer/WebProject/libsodium.dll
 
-MainServer/Overlord/opus.dll
+MainServer/WebProject/opus.dll
 
-MainServer/Overlord/Sounds/
+MainServer/WebProject/Sounds/
 
 VsratiyAgent/node_modules/

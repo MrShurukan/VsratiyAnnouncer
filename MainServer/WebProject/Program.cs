@@ -1,7 +1,7 @@
 using Blazored.Toast;
 using DiscordBotProject;
-using Overlord.Domain;
-using Overlord.Misc;
+using WebProject.Domain;
+using WebProject.Misc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddBlazoredToast();
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 builder.Services.AddScoped<ActionManager>();
 
 builder.Services.AddSingleton(new DiscordBot());
@@ -29,8 +33,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.MapControllers();
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 if (app.Configuration.GetValue<bool>("LaunchDiscordBot", true))
 {

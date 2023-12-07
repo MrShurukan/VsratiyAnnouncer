@@ -1,6 +1,6 @@
 ﻿using Blazored.Toast.Services;
 
-namespace Overlord.Domain;
+namespace WebProject.Domain;
 
 public class ActionManager
 {
