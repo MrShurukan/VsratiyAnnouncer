@@ -5,15 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4273a58a-d45a-42b2-94eb-ae60b6456cc4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/VsratiyAgent.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MainServer/DiscordBotProject/DiscordBot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MainServer/DiscordBotProject/DiscordBot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MainServer/DiscordBotProject/MainInteractionModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MainServer/DiscordBotProject/MainInteractionModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MainServer/WebProject/Misc/DependencyHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MainServer/WebProject/Misc/DependencyHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MainServer/WebProject/Pages/_Host.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../MainServer/WebProject/Pages/_Host.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MainServer/WebProject/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MainServer/WebProject/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MainServer/WebProject/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/../MainServer/WebProject/Shared/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MainServer/WebProject/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/../MainServer/WebProject/Shared/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MainServer/WebProject/wwwroot/css/bootstrap/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MainServer/WebProject/wwwroot/css/bootstrap/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +47,7 @@
     "git-widget-placeholder": "ilya/agent-initial",
     "javascript.nodejs.core.library.configured.version": "16.13.1",
     "javascript.nodejs.core.library.typings.version": "16.18.61",
-    "last_opened_file_path": "C:/Users/ilyuz/Documents/submoduleTest/studentfrontend",
+    "last_opened_file_path": "C:/Users/ilyuz/Documents/VsratiyAnnouncer/VsratiyAgent/img",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -51,6 +56,17 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ilyuz\Documents\VsratiyAnnouncer\VsratiyAgent\img" />
+      <recent name="C:\Users\ilyuz\Documents\VsratiyAnnouncer\VsratiyAgent\fonts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ilyuz\Documents\VsratiyAnnouncer\VsratiyAgent\fonts" />
+      <recent name="C:\Users\ilyuz\Documents\VsratiyAnnouncer\VsratiyAgent\img" />
+      <recent name="C:\Users\ilyuz\Documents\VsratiyAnnouncer\VsratiyAgent\css" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -71,7 +87,7 @@
       <workItem from="1699534327141" duration="1051000" />
       <workItem from="1699547725262" duration="2550000" />
       <workItem from="1701424960457" duration="26000" />
-      <workItem from="1701967699777" duration="1242000" />
+      <workItem from="1701967699777" duration="9610000" />
     </task>
     <servers />
   </component>

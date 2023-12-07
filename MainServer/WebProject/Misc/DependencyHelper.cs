@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using DiscordBotProject;
 
 namespace WebProject.Misc;
 
@@ -12,8 +13,8 @@ public static class DependencyHelper
     public static void TestDependencies()
     {
         string opusVersion = Marshal.PtrToStringAnsi(OpusVersionString());
-        Console.WriteLine($"Loaded opus with version string: {opusVersion}");
+        ConsoleWriter.WriteSuccessLn($"Loaded opus with version string: {opusVersion}");
         string sodiumVersion = Marshal.PtrToStringAnsi(SodiumVersionString());
-        Console.WriteLine($"Loaded sodium with version string: {sodiumVersion}");
+        ConsoleWriter.WriteSuccessLn($"Loaded sodium with version string: {sodiumVersion}");
     }
 }

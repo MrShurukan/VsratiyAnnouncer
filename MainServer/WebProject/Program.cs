@@ -48,10 +48,10 @@ if (app.Configuration.GetValue<bool>("LaunchDiscordBot", true))
 }
 else
 {
-    Console.WriteLine("Внимание! Дискорд бот не будет запущен, так как стоит LaunchDiscordBot = false в appsettings.json");    
+    ConsoleWriter.WriteWarningLn("Внимание! Дискорд бот не будет запущен, так как стоит LaunchDiscordBot = false в appsettings.json");    
 }
 
-Console.WriteLine("Проверяю зависимости...");
+ConsoleWriter.WriteInfoLn("Проверяю зависимости...");
 DependencyHelper.TestDependencies();
 
 app.Run();

@@ -1,0 +1,29 @@
+:root {
+    --background-color: #10140F
+}
+
+* {
+    color: #EFF0EF;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url("../fonts/Ubuntu-Regular.ttf")
+}
+
+@font-face {
+    font-family: 'Ubuntu Light';
+    src: url("../fonts/Ubuntu-Light.ttf")
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+    font-family: 'Ubuntu', serif;
+
+    background-color: var(--background-color);
+}

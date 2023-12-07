@@ -42,7 +42,7 @@ public class DiscordBot
         }
         catch (Exception e)
         {
-            Console.WriteLine("\n\nERROR WHILE ADDING MODULES: " + e.Message);
+            ConsoleWriter.WriteDangerLn("\n\nERROR WHILE ADDING MODULES: " + e.Message);
             throw;
         }
 
@@ -55,7 +55,7 @@ public class DiscordBot
         _settings = await Settings.GetFromFileAsync();
         var discordToken = _settings.Token;
 
-        Console.WriteLine("Запускаю бота...");
+        ConsoleWriter.WriteInfoLn("Запускаю бота...");
         await _client.LoginAsync(TokenType.Bot, discordToken);
         await _client.StartAsync();
 

@@ -43,7 +43,7 @@ public class MainInteractionModule : InteractionModuleBase
         }
         catch (Exception e)
         {
-            Console.WriteLine("Error while connecting to a VC: " + e.Message);
+            ConsoleWriter.WriteDangerLn("Error while connecting to a VC: " + e.Message);
         }
     }
 
@@ -86,7 +86,7 @@ public class MainInteractionModule : InteractionModuleBase
             }
             catch (Exception e)
             {
-                Console.WriteLine($"Error while sending audio: {e.Message}");
+                ConsoleWriter.WriteDangerLn($"Error while sending audio: {e.Message}");
                 throw;
             }
             finally

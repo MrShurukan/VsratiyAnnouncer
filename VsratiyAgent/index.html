@@ -1,15 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>Hello World!</title>
 </head>
 <body>
-<h1>Hello World!</h1>
-We are using Node.js <span id="node-version"></span>,
-Chromium <span id="chrome-version"></span>,
-and Electron <span id="electron-version"></span>.
+    <section id="left">
+        <h1>Всратый агент</h1>
+
+        <div>
+            <p>Подключение к серверу: <img src="img/success.png"></p>
+            <p>Идентифицирован как: <span>Саня</span></p>
+
+            <p class="large-gap">Dota 2 запущена: <img src="img/success.png"></p>
+            <p>Идёт игра: <img src="img/failed.png"></p>
+
+            <p class="large-gap">В дискорде с ботом: <img src="img/success.png"></p>
+        </div>
+
+        <footer>Ваш ID: ca112ef6-6a7e-4a21-a0bb-6fab8c8766cb</footer>
+    </section>
+
+    <section id="right">
+        <h2>События</h2>
+        <div id="events-block">
+            <div id="events">
+                <div class="success-event">22:47: Игра началась</div>
+                <div class="success-event">22:48: Произошёл киллстрик <br> Убито 15 противников <br> <br> STILL GODLIKE</div>
+                <div class="failure-event">22:49: Потеряно соединение <br> Пытаюсь перезагрузиться <br> И ещё текст</div>
+            </div>
+            <button>Копировать</button>
+        </div>
+        <img src="img/pudgedog.png" width="240px">
+    </section>
 </body>
+
 </html>

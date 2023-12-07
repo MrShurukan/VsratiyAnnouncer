@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    font-size: 64px;
+    margin-top: 40px;
+}
+
+img {
+    margin-top: 46px;
+}
+
+p {
+    margin-top: 39px;
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+p.barelyVisible {
+    margin-top: 2px;
+    color: #222222;
+}
