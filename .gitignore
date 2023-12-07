@@ -7,4 +7,4 @@ MainServer/WebProject/opus.dll
 
 MainServer/WebProject/Sounds/
 
-VsratiyAgent/node_modules/
+VsratiyAgent/node_modules/*

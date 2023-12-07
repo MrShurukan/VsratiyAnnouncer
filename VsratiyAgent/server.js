@@ -19,7 +19,7 @@ server.events.on('newclient', function(client) {
     }
 
     client.on('map:game_state', function (gameState) {
-        console.log("GameState:", gameState);
+       console.log("GameState:", gameState);
     });
     client.on('map:win_team', function (winTeam) {
         console.log("WinTeam:", winTeam);
@@ -72,12 +72,12 @@ server.events.on('newclient', function(client) {
         console.log("ward_cooldown", cooldown);
     });
     client.on('map:win_team', function (winTeam) {
-        console.log("Someone won!", winTeam);
-        console.log("Player team", client.gamestate.player.team_name);
-        if (client.gamestate.player.team_name === winTeam)
-            console.log("Player won!");
-        else
-            console.log("Player lost!");
+       console.log("Someone won!", winTeam);
+       console.log("Player team", client.gamestate.player.team_name);
+       if (client.gamestate.player.team_name === winTeam)
+           console.log("Player won!");
+       else
+           console.log("Player lost!");
     });
     client.on('map:clock_time', function (clock) {
         // console.log(clock);
