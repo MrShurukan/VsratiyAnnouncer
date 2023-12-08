@@ -119,6 +119,29 @@
     background: #20381c;
 }
 
+#pudgeHolder {
+    position: relative;
+    width: 240px;
+    height: 240px;
+}
+
+#pudgeVideo {
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+#pudgeImage {
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+
 /* Scrollbar */
 *::-webkit-scrollbar {
     height: 15px;
