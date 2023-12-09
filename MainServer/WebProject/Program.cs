@@ -1,9 +1,34 @@
 using Blazored.Toast;
 using DiscordBotProject;
+using Microsoft.EntityFrameworkCore;
+using Overlord;
+using Serilog;
+using WebProject;
 using WebProject.Domain;
 using WebProject.Misc;
+using WebProject.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// builder.Logging.AddProvider(new SuppressExceptionHandlerLoggingProvider(
+//     builder.Services.BuildServiceProvider().GetService<ILoggerFactory>()!)
+// );
+
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json")
+    .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", true)
+    .Build();
+
+var logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(configuration)
+    .CreateLogger();
+
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(configuration)
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 // Add services to the container.
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
@@ -13,9 +38,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<ActionManager>();
+builder.Services.AddHostedService<RemoveInactiveAgentsService>();
 
+var connectionString = Overlord.Settings.GetFromFile().DbConnection;
+
+builder.Services.AddDbContext<ApplicationContext>(optionsBuilder =>
+{
+    optionsBuilder.UseNpgsql(connectionString);
+});
+
+builder.Services.AddScoped<ActionManager>();
 builder.Services.AddSingleton(new DiscordBot());
+
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Overlord.Settings>());
+builder.Services.AddExceptionHandler<ExceptionHandler>();
 
 var app = builder.Build();
 
@@ -32,6 +68,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseExceptionHandler(_ => { });
 
 app.MapControllers();
 app.MapBlazorHub();

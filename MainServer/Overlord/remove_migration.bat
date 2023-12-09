@@ -1,0 +1,1 @@
+dotnet ef --startup-project ..\WebProject\ migrations remove %1 --context Overlord.ApplicationContext

@@ -1,0 +1,1 @@
+dotnet ef --startup-project ..\WebProject\ database update %1 --context Overlord.ApplicationContext

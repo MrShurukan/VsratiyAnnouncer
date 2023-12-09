@@ -1,0 +1,4 @@
+﻿{
+    "comment": "Скопируйте этот файл и назовите его overlord.json",
+    "dbConnection": "Data Source=sqlite.db"
+}

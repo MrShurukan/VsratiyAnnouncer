@@ -1,0 +1,1 @@
+dotnet ef --startup-project ..\WebProject\ migrations add %1 %2 --context Overlord.ApplicationContext

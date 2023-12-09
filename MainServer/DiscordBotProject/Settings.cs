@@ -25,7 +25,7 @@ public class Settings
             throw new FileNotFoundException($"Нет файла discordbot.json в корне проекта {nameof(DiscordBotProject)} (см. discordbot.sample.json)");
         }
 
-        return JsonConvert.DeserializeObject<Settings>(await File.ReadAllTextAsync(SettingsPath));
+        return JsonConvert.DeserializeObject<Settings>(await File.ReadAllTextAsync(SettingsPath))!;
     }
 
     public static Settings GetFromFile()
@@ -35,6 +35,6 @@ public class Settings
             throw new FileNotFoundException($"Нет файла discordbot.json в корне проекта {nameof(DiscordBotProject)} (см. discordbot.sample.json)");
         }
 
-        return JsonConvert.DeserializeObject<Settings>(File.ReadAllText(SettingsPath));
+        return JsonConvert.DeserializeObject<Settings>(File.ReadAllText(SettingsPath))!;
     }
 }

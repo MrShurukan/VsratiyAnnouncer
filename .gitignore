@@ -9,3 +9,11 @@ MainServer/WebProject/Sounds/
 
 VsratiyAgent/node_modules/*
 VsratiyAgent/id.txt
+
+MainServer/Overlord/overlord.json
+
+*.db
+
+*.db-shm
+
+*.db-wal
