@@ -17,6 +17,8 @@ public class SingOffRequestHandler(ApplicationContext context)
         agent.IsActive = false;
         agent.LastCommandTime = null;
 
+        await context.SaveChangesAsync(cancellationToken);
+
         return Unit.Value;
     }
 }

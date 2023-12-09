@@ -1,4 +1,4 @@
 ﻿{
     "comment": "Скопируйте этот файл и назовите его overlord.json",
-    "dbConnection": "Data Source=sqlite.db"
+    "dbConnection": "Host=localhost;Port=5432;Database=Overlord;Username=username;Password=password"
 }

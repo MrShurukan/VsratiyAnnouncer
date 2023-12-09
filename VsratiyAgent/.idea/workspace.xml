@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4273a58a-d45a-42b2-94eb-ae60b6456cc4" name="Changes" comment="" />
+    <list default="true" id="4273a58a-d45a-42b2-94eb-ae60b6456cc4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../MainServer/Overlord/Requests/SignOffRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MainServer/Overlord/Requests/SignOffRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MainServer/Overlord/overlord.sample.json" beforeDir="false" afterPath="$PROJECT_DIR$/../MainServer/Overlord/overlord.sample.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,6 +79,7 @@
       <workItem from="1701424960457" duration="26000" />
       <workItem from="1701967699777" duration="9610000" />
       <workItem from="1702021150702" duration="4312000" />
+      <workItem from="1702113328385" duration="592000" />
     </task>
     <servers />
   </component>
