@@ -1,0 +1,39 @@
+﻿@page "/Events"
+<PageTitle>События</PageTitle>
+
+<h1>События в системе</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col" class="text-center">Время</th>
+        <th scope="col" class="text-center">Имя агента</th>
+        <th scope="col" class="text-center">Сообщение</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="table-warning">
+        <th scope="row" class="text-center">22:28 (10.12)</th>
+        <td class="text-center">Илья</td>
+        <td>Произведено отключение по таймауту</td>
+    </tr>
+    <tr class="table-primary">
+        <th scope="row" class="text-center">22:32 (10.12)</th>
+        <td class="text-center">Саня</td>
+        <td>Агент подключен</td>
+    </tr>
+    <tr class="table-success">
+        <th scope="row" class="text-center">22:33 (10.12)</th>
+        <td class="text-center">-</td>
+        <td>Подгружена зависимость: libopus 1.1.4</td>
+    </tr>
+    <tr class="table-danger">
+        <th scope="row" class="text-center">22:33 (10.12)</th>
+        <td class="text-center">-</td>
+        <td>Ошибка подгрузки: sodium 1.1.4</td>
+    </tr>
+    </tbody>
+</table>
+
+@code {
+
+}

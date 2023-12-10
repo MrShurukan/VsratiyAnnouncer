@@ -92,4 +92,6 @@ else
 ConsoleWriter.WriteInfoLn("Проверяю зависимости...");
 DependencyHelper.TestDependencies();
 
+ConsoleWriter.WriteInfoLn("http://localhost:5064/");
+
 app.Run();
