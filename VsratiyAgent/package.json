@@ -11,5 +11,8 @@
   "devDependencies": {
     "electron": "^28.0.0",
     "electron-reloader": "^1.2.3"
+  },
+  "dependencies": {
+    "dota2-gsi": "^1.0.2"
   }
 }
