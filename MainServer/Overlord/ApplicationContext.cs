@@ -8,7 +8,7 @@ public class ApplicationContext(DbContextOptions<ApplicationContext> options) : 
 {
     public DbSet<Agent> Agents { get; set; }
 
-    public async Task<Agent> FindAgentAndMarkAsActive(Guid id, CancellationToken token)
+    public async Task<Agent> FindAgentAndMarkAsActiveAsync(Guid id, CancellationToken token)
     {
         var agent = await Agents.FindRequiredAsync(id, token);
 

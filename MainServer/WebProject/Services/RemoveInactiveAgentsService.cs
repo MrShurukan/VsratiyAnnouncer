@@ -16,6 +16,7 @@ public class RemoveInactiveAgentsService(IServiceProvider serviceProvider)
         {
             await ApplicationLogic.RemoveInactiveAgents(context, cancellationToken);
 
+            context.ChangeTracker.Clear();
             await Task.Delay(TimeSpan.FromSeconds(30), cancellationToken);
         }
     }

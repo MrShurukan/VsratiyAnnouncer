@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4273a58a-d45a-42b2-94eb-ae60b6456cc4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../MainServer/Overlord/Requests/SignOffRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MainServer/Overlord/Requests/SignOffRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../MainServer/Overlord/overlord.sample.json" beforeDir="false" afterPath="$PROJECT_DIR$/../MainServer/Overlord/overlord.sample.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MainServer/Overlord/ApplicationContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MainServer/Overlord/ApplicationContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MainServer/Overlord/Requests/RegisterRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MainServer/Overlord/Requests/RegisterRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MainServer/WebProject/Controllers/AgentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MainServer/WebProject/Controllers/AgentController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MainServer/WebProject/Services/RemoveInactiveAgentsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../MainServer/WebProject/Services/RemoveInactiveAgentsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +41,9 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;ilya/agent-initial&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.13.1&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.18.61&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ilyuz/Documents/VsratiyAnnouncer/VsratiyAgent/sounds&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.19.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.19.0&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ilyuz/Documents/VsratiyAnnouncer/VsratiyAgent/js&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -46,6 +54,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ilyuz\Documents\VsratiyAnnouncer\VsratiyAgent\js" />
       <recent name="C:\Users\ilyuz\Documents\VsratiyAnnouncer\VsratiyAgent\sounds" />
       <recent name="C:\Users\ilyuz\Documents\VsratiyAnnouncer\VsratiyAgent\img" />
       <recent name="C:\Users\ilyuz\Documents\VsratiyAnnouncer\VsratiyAgent\fonts" />
@@ -79,7 +88,8 @@
       <workItem from="1701424960457" duration="26000" />
       <workItem from="1701967699777" duration="9610000" />
       <workItem from="1702021150702" duration="4312000" />
-      <workItem from="1702113328385" duration="592000" />
+      <workItem from="1702113328385" duration="5886000" />
+      <workItem from="1702229915070" duration="1477000" />
     </task>
     <servers />
   </component>

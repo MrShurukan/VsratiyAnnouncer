@@ -12,9 +12,9 @@ public class AgentController(IMediator mediator)
 {
     [HttpPost("Register")]
     [ProducesResponseType<Agent>(StatusCodes.Status200OK)]
-    public async Task<IActionResult> Register(Guid agentId, CancellationToken token)
+    public async Task<IActionResult> Register(Guid agentId, [FromQuery]bool force, CancellationToken token)
     {
-        var agent = await mediator.Send(new RegisterRequest(agentId), token);
+        var agent = await mediator.Send(new RegisterRequest(agentId, force), token);
         return Ok(agent);
     }
     
@@ -22,7 +22,15 @@ public class AgentController(IMediator mediator)
     [ProducesResponseType<string>(StatusCodes.Status200OK)]
     public async Task<IActionResult> SignOff(Guid agentId, CancellationToken token)
     {
-        var agent = await mediator.Send(new SignOffRequest(agentId), token);
+        await mediator.Send(new SignOffRequest(agentId), token);
         return Ok("Успешно выполнен выход");
+    }
+    
+    [HttpPost("Ping")]
+    [ProducesResponseType<Agent>(StatusCodes.Status200OK)]
+    public async Task<IActionResult> Ping(Guid agentId, CancellationToken token)
+    {
+        var agent = await mediator.Send(new PingRequest(agentId), token);
+        return Ok(agent);
     }
 }

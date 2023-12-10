@@ -3,7 +3,7 @@ const path = require('node:path')
 const fs = require("fs");
 
 try {
-    require('electron-reloader')(module)
+    //require('electron-reloader')(module)
 } catch (_) {}
 
 const createWindow = () => {
@@ -14,7 +14,9 @@ const createWindow = () => {
         resizable: false,
         maximizable: false,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
+            preload: path.join(__dirname, 'preload.js'),
+            nodeIntegration: true,
+            contextIsolation: false,
         }
     });
 
